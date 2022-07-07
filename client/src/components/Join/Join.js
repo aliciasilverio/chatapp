@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createRoutesFromChildren, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Join.css';
 
 const Join = () => {
