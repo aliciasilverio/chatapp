@@ -10,6 +10,15 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
+// this is socket that will be connected as a client side socket 
+io.on('connection', (socket) => {
+    console.log('We have a new connection!!!');
+
+    socket.on('disconnect', () => {
+        console.log('The User has left!!!')
+    })
+});
+
 app.use(router);
 
 server.listen(PORT, () => console.log(`Server has started on port ${PORT}`));
